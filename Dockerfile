@@ -9,7 +9,9 @@ ENV RUN_PYTHON=${RUN_PYTHON}
 RUN apt-get update && \
     apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_7.x | /bin/bash - && \
-    apt-get install -y nodejs && \
+    apt-get install -y nodejs build-essential libmysqlclient-dev && \
+    pip install mysqlclient && \
+    apt-get purge -y build-essential && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
