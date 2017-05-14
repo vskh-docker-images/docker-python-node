@@ -3,4 +3,11 @@
 
 
 Docker image that contains latest Python and Node.js installed.
- - MySQLdb is also preinstalled.
+
+Image contains:
+  - Python 3
+  - Node 7.x
+
+  + MySQLdb
+  + git
+
