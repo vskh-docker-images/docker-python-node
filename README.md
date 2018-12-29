@@ -6,7 +6,7 @@ Docker image that contains latest Python and Node.js installed.
 
 Image contains:
   - Python 3
-  - Node 7.x
+  - Node 11.x
 
   + MySQLdb
   + git
