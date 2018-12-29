@@ -7,7 +7,7 @@ ARG RUN_PYTHON=1
 ENV RUN_PYTHON=${RUN_PYTHON}
 
 RUN apt-get update && \
-    apt-get install -y curl git && \
+    apt-get install -y curl git gnupg apt-utils && \
     curl -sL https://deb.nodesource.com/setup_11.x | /bin/bash - && \
     apt-get install -y nodejs build-essential libmysqlclient-dev && \
     pip install mysqlclient && \
