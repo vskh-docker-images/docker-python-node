@@ -8,14 +8,17 @@ ENV RUN_PYTHON=${RUN_PYTHON}
 
 RUN apt update && \
     apt install -y curl git gnupg apt-utils && \
-    curl -sL https://deb.nodesource.com/setup_22.x | /bin/bash - && \
-    apt install -y nodejs build-essential default-libmysqlclient-dev && \
+    curl -sL https://deb.nodesource.com/setup_25.x | /bin/bash - && \
+    apt install -y nodejs build-essential pkg-config default-libmysqlclient-dev && \
     pip install mysqlclient && \
     apt purge -y build-essential && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-CMD [ $RUN_PYTHON = 1 ] && python3 || node
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 # end
 
