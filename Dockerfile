@@ -8,7 +8,7 @@ ENV RUN_PYTHON=${RUN_PYTHON}
 
 RUN apt update && \
     apt install -y curl git gnupg apt-utils && \
-    curl -sL https://deb.nodesource.com/setup_22.x | /bin/bash - && \
+    curl -sL https://deb.nodesource.com/setup_24.x | /bin/bash - && \
     apt install -y nodejs build-essential default-libmysqlclient-dev && \
     pip install mysqlclient && \
     apt purge -y build-essential && \
